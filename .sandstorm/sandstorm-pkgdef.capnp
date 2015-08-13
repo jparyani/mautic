@@ -1,4 +1,4 @@
-@0xb6808d39c5a0de34;
+@0xa1158eb4c0119120;
 
 using Spk = import "/sandstorm/package.capnp";
 # This imports:
@@ -9,7 +9,7 @@ const pkgdef :Spk.PackageDefinition = (
   # The package definition. Note that the spk tool looks specifically for the
   # "pkgdef" constant.
 
-  id = "q5mua1sk4zsw81nr03fmgjy2qx4rua5euu9jsdzdvzyphuqtd090",
+  id = "rhwgy745szhagzqcra046grma4esqhxqkjmv8j9ajrgt2vr0tu7h",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
@@ -17,7 +17,7 @@ const pkgdef :Spk.PackageDefinition = (
     # This manifest is included in your app package to tell Sandstorm
     # about your app.
 
-    appTitle = (defaultText = "Mautic App"),
+    appTitle = (defaultText = "Example App"),
 
     appVersion = 0,  # Increment this for every release.
 
@@ -27,7 +27,7 @@ const pkgdef :Spk.PackageDefinition = (
 
     actions = [
       # Define your "new document" handlers here.
-      ( title = (defaultText = "New Mautic Instance"),
+      ( title = (defaultText = "New Instance"),
         command = .myCommand
         # The command to run when starting for the first time. (".myCommand"
         # is just a constant defined at the bottom of the file.)

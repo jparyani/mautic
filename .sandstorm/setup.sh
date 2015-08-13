@@ -4,7 +4,7 @@ set -euo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
-apt-get install -y nginx php5-fpm php5-mysql php5-cli php5-curl git php5-dev mysql-server
+apt-get install -y nginx php5-fpm php5-mysql php5-cli php5-curl php5-mcrypt php5-intl git php5-dev mysql-server
 unlink /etc/nginx/sites-enabled/default
 cat > /etc/nginx/sites-available/sandstorm-php <<EOF
 server {
@@ -15,9 +15,10 @@ server {
     root /opt/app;
     location / {
         index index.php;
-        try_files \$uri \$uri/ =404;
+        try_files \$uri /index\.php\$is_args\$args;
     }
     location ~ \\.php\$ {
+		try_files \$uri =404;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_index index.php;
         fastcgi_split_path_info ^(.+\\.php)(/.+)\$;
