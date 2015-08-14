@@ -5,7 +5,7 @@ set -euo pipefail
 
 cd /opt/app
 
-PLACE_IN_MAUTIC_REPO_WHERE_IT_EXPECTS_CACHE_DIR="/opt/app/app/cache/prod"
+PLACE_IN_MAUTIC_REPO_WHERE_IT_EXPECTS_CACHE_DIR="/opt/app/app/cache"
 # Make sure the parent directory exists
 mkdir -p $(dirname "$PLACE_IN_MAUTIC_REPO_WHERE_IT_EXPECTS_CACHE_DIR")
 # If the thing doesn't exist, make it a symlink to /var/mautic-cache
